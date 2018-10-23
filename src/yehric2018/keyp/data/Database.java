@@ -1,4 +1,4 @@
-package yehric2018.stickypass.data;
+package yehric2018.keyp.data;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,7 +21,7 @@ public class Database {
 		passwords = new HashMap<String, Password>();
 		savedSites = new HashSet<String>();
 		
-		storage = new File(".\\info\\passwords.txt");
+		storage = new File(".\\private\\passwords.txt");
 		init();
 		
 		try {

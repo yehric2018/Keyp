@@ -1,4 +1,4 @@
-package yehric2018.stickypass.util;
+package yehric2018.keyp.util;
 
 import java.util.Random;
 

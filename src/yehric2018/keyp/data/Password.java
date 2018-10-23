@@ -1,4 +1,4 @@
-package yehric2018.stickypass.data;
+package yehric2018.keyp.data;
 
 public class Password {
 	//Remove this soon

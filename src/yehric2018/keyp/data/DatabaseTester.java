@@ -1,8 +1,8 @@
-package yehric2018.stickypass.data;
+package yehric2018.keyp.data;
 
 import java.util.Scanner;
 
-import yehric2018.stickypass.util.ClipboardManager;
+import yehric2018.keyp.util.ClipboardManager;
 
 public class DatabaseTester {
 	public static void main(String[] args) {
@@ -30,7 +30,10 @@ public class DatabaseTester {
 			String site = s.nextLine();
 			if (database.containsSite(site)) {
 				ClipboardManager.copyText(database.getPassword(site));
-				System.out.println("Password successfully copied!\n");
+				System.out.println("Password successfully copied!");
+				System.out.println("Press enter to clear your clipboard.\n");
+				s.nextLine();
+				ClipboardManager.clearClipBoard();
 			} else {
 				System.out.println("Site not registered.");
 			}
