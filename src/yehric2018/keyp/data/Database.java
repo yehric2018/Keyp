@@ -16,6 +16,7 @@ public class Database {
 	private PrintStream output;
 	
 	private Set<String> savedSites;
+	private String currentSite;
 	
 	public Database() {
 		passwords = new HashMap<String, Password>();
@@ -43,9 +44,15 @@ public class Database {
 		}
 	}
 	
+	// Allows a site name to be stored temporarily in the database
+	public void setCurrentSite(String site) {
+		currentSite = site;
+	}
+	
 	// Add a new site to the database, matching with a corresponding password
-	public void addSite(String site, String password) {
-		passwords.put(site, new Password(password));
+	public void addSite(String password) {
+		passwords.put(currentSite, new Password(password));
+		setCurrentSite("");
 	}
 	
 	// Returns the password corresponding to the given site name
@@ -73,6 +80,7 @@ public class Database {
 				
 				passwords.put(pair[0], new Password(pair[1]));
 			}
+			s.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

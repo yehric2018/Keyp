@@ -44,7 +44,8 @@ public class DatabaseTester {
 			String password = s.nextLine();
 			System.out.println();
 			
-			database.addSite(site, password);
+			database.setCurrentSite(site);
+			database.addSite(password);
 		} else if (choice == 0) {
 			System.out.println("Thanks for using! ");
 			database.saveData();

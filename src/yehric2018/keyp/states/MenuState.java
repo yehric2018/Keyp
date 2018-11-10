@@ -13,8 +13,6 @@ public class MenuState extends State {
 		super(program);
 		
 		init();
-		
-		program.getMouseManager().setUIManager(uiManager);
 	}
 	
 	public void update(Graphics g) {
@@ -22,19 +20,20 @@ public class MenuState extends State {
 	}
 	
 	private void init() {
-		uiManager.addElement(new UIButton(10, 150, 150, 150, Assets.login, new ClickListener() {
+		uiManager.addElement(new UIButton(20, 150, 150, 150, Assets.login, new ClickListener() {
 			// Access a password
 			public void onClick() {
 				System.out.println("Accessing password...");
 			}
 		}));
-		uiManager.addElement(new UIButton(170, 150, 150, 150, Assets.addsite, new ClickListener() {
+		uiManager.addElement(new UIButton(180, 150, 150, 150, Assets.addsite, new ClickListener() {
 			public void onClick() {
-				System.out.println("Adding login to database...");
+				uiManager.reset();
+				program.setState(State.SITE_ENTRY_STATE);
 			}
 		}));
 		
-		uiManager.addElement(new UIButton(330, 150, 150, 150, Assets.settings, new ClickListener() {
+		uiManager.addElement(new UIButton(340, 150, 150, 150, Assets.settings, new ClickListener() {
 			// Change the settings
 			public void onClick() {
 				System.out.println("Changing settings...");

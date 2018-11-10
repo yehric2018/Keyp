@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 
 public class Display {
 	public static final String PROGRAM_TITLE = "Memopass";
+	public static int WIDTH_OFFSET = 16, HEIGHT_OFFSET = 39;
 	
 	private int width, height;
 	
@@ -24,7 +25,7 @@ public class Display {
 	// Initialize the program's user interface, set to state 0
 	private void init() {
 		frame = new JFrame(PROGRAM_TITLE);
-		frame.setSize(width, height);
+		frame.setSize(width + WIDTH_OFFSET, height + HEIGHT_OFFSET);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		

@@ -5,15 +5,24 @@ import java.awt.image.BufferedImage;
 public class Assets {
 	
 	public static BufferedImage logotext;
+	public static BufferedImage sitefield;
+	public static BufferedImage pwordfield;
+	public static BufferedImage successfuladd;
 	
 	public static BufferedImage[] addsite;
 	public static BufferedImage[] login;
 	public static BufferedImage[] settings;
+	public static BufferedImage[] submit;
+	public static BufferedImage[] back;
+	public static BufferedImage[] randomPassword;
 	
 	public static void init() {
 		addsite = new BufferedImage[2];
 		login = new BufferedImage[2];
 		settings = new BufferedImage[2];
+		submit = new BufferedImage[2];
+		back = new BufferedImage[2];
+		randomPassword = new BufferedImage[2];
 		
 		addsite[0] = ImageLoader.loadImage("/buttons/addsitebutton1.png");
 		addsite[1] = ImageLoader.loadImage("/buttons/addsitebutton2.png");
@@ -21,7 +30,16 @@ public class Assets {
 		login[1] = ImageLoader.loadImage("/buttons/accessinfobutton2.png");
 		settings[0] = ImageLoader.loadImage("/buttons/settingsbutton1.png");
 		settings[1] = ImageLoader.loadImage("/buttons/settingsbutton2.png");
-		
+		submit[0] = ImageLoader.loadImage("/buttons/submitbutton1.png");
+		submit[1] = ImageLoader.loadImage("/buttons/submitbutton2.png");
+		back[0] = ImageLoader.loadImage("/buttons/backbutton1.png");
+		back[1] = ImageLoader.loadImage("/buttons/backbutton2.png");
+		randomPassword[0] = ImageLoader.loadImage("/buttons/generaterandom1.png");
+		randomPassword[1] = ImageLoader.loadImage("/buttons/generaterandom2.png");
+				
 		logotext = ImageLoader.loadImage("/concepts/logotext.png");
+		sitefield = ImageLoader.loadImage("/prompts/siteentryfield.png");
+		pwordfield = ImageLoader.loadImage("/prompts/pwordentryfield.png");
+		successfuladd = ImageLoader.loadImage("/prompts/successfuladd.png");
 	}
 }

@@ -1,26 +1,34 @@
 package yehric2018.keyp;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
+import yehric2018.keyp.data.Database;
 import yehric2018.keyp.gfx.Assets;
 import yehric2018.keyp.gfx.Display;
+import yehric2018.keyp.input.KeyManager;
 import yehric2018.keyp.input.MouseManager;
+import yehric2018.keyp.states.AddSuccessState;
 import yehric2018.keyp.states.MenuState;
+import yehric2018.keyp.states.PasswordEntryState;
+import yehric2018.keyp.states.SiteEntryState;
 import yehric2018.keyp.states.State;
 import yehric2018.keyp.states.TestState;
 
 public class Program {
+	
 	private int width, height;
+	
+	private Database database;
 	
 	private Display display;
 	private BufferStrategy bs;
 	private Graphics g;
 	
 	private MouseManager mouseManager;
+	private KeyManager keyManager;
 	
-	private State menuState;
+	private State[] states;
 	
 	public Program(int width, int height) {
 		this.width = width;
@@ -48,15 +56,29 @@ public class Program {
 	
 	public void start() {
 		init();
-		State.setState(menuState);
+		setState(State.MENU_STATE);
+	}
+	
+	public void setState(int n) {
+		State.setState(states[n]);
+		mouseManager.setUIManager(states[n].getUIManager());
+		keyManager.setUIManager(states[n].getUIManager());
 	}
 	
 	public MouseManager getMouseManager() {
 		return mouseManager;
 	}
 	
+	public KeyManager getKeyManager() {
+		return keyManager;
+	}
+	
 	public Display getDisplay() {
 		return display;
+	}
+	
+	public Database getDatabase() {
+		return database;
 	}
 	
 	private void init() {
@@ -66,8 +88,18 @@ public class Program {
 		display.getCanvas().addMouseListener(mouseManager);
 		display.getCanvas().addMouseMotionListener(mouseManager);
 		
+		keyManager = new KeyManager();
+		display.getFrame().addKeyListener(keyManager);
+		
 		Assets.init();
 		
-		menuState = new MenuState(this);
+		states = new State[State.NUM_OF_STATES];
+		states[0] = new MenuState(this);
+		states[1] = new SiteEntryState(this);
+		states[2] = new PasswordEntryState(this);
+		states[3] = new AddSuccessState(this);
+		states[19] = new TestState(this);
+		
+		database = new Database();
 	}
 }

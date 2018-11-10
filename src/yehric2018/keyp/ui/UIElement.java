@@ -2,6 +2,7 @@ package yehric2018.keyp.ui;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
 public abstract class UIElement {
@@ -36,7 +37,15 @@ public abstract class UIElement {
 		}
 	}
 	
+	public void keyTyped(KeyEvent e) {
+		
+	}
+	
 	public boolean isHovering() {
 		return false;
+	}
+	
+	public void reset() {
+		hovering = false;
 	}
 }

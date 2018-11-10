@@ -1,7 +1,7 @@
 package yehric2018.keyp.ui;
 
-import java.awt.Cursor;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +38,11 @@ public class UIManager {
 			o.onMouseRelease(e);
 	}
 	
+	public void keyTyped(KeyEvent e) {
+		for (UIElement o : elements)
+			o.keyTyped(e);
+	}
+	
 	public Program getProgram() {
 		return program;
 	}
@@ -52,5 +57,10 @@ public class UIManager {
 
 	public void setelements(ArrayList<UIElement> elements) {
 		this.elements = elements;
+	}
+	
+	public void reset() {
+		for (UIElement o : elements)
+			o.reset();
 	}
 }
