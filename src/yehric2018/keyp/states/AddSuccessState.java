@@ -18,7 +18,6 @@ public class AddSuccessState extends State {
 	private void init() {
 		uiManager.addElement(new UIButton(200, 200, 100, 60, Assets.submit, new ClickListener() {
 			public void onClick() {
-				uiManager.reset();
 				program.setState(State.MENU_STATE);
 			}
 		}));

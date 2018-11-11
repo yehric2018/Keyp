@@ -32,4 +32,7 @@ public class UIButton extends UIElement {
 		return hovering;
 	}
 
+	public void setImages(BufferedImage[] images) {
+		this.images = images;
+	}
 }

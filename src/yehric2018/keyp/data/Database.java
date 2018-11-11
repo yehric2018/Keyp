@@ -57,12 +57,12 @@ public class Database {
 	
 	// Returns the password corresponding to the given site name
 	// Throws IllegalArgumentException if not present
-	public String getPassword(String site) {
-		if (!passwords.containsKey(site)) {
+	public String getPassword() {
+		if (!passwords.containsKey(currentSite)) {
 			throw new IllegalArgumentException("Site not registered in database");
 		}
 		
-		return passwords.get(site).getPlainText();
+		return passwords.get(currentSite).getPlainText();
 	}
 	
 	// Returns whether the database contains the given site

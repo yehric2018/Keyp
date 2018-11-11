@@ -23,12 +23,11 @@ public class MenuState extends State {
 		uiManager.addElement(new UIButton(20, 150, 150, 150, Assets.login, new ClickListener() {
 			// Access a password
 			public void onClick() {
-				System.out.println("Accessing password...");
+				program.setState(State.SITE_ACCESS_STATE);
 			}
 		}));
 		uiManager.addElement(new UIButton(180, 150, 150, 150, Assets.addsite, new ClickListener() {
 			public void onClick() {
-				uiManager.reset();
 				program.setState(State.SITE_ENTRY_STATE);
 			}
 		}));

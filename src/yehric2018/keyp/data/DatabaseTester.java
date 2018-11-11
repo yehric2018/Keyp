@@ -29,7 +29,7 @@ public class DatabaseTester {
 			System.out.println("Which site will you access? ");
 			String site = s.nextLine();
 			if (database.containsSite(site)) {
-				ClipboardManager.copyText(database.getPassword(site));
+				ClipboardManager.copyText(database.getPassword());
 				System.out.println("Password successfully copied!");
 				System.out.println("Press enter to clear your clipboard.\n");
 				s.nextLine();

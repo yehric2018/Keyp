@@ -11,6 +11,8 @@ public abstract class State {
 	public static final int SITE_ENTRY_STATE = 1;
 	public static final int PASSWORD_ENTRY_STATE = 2;
 	public static final int ADD_SUCCESS_STATE = 3;
+	public static final int SITE_ACCESS_STATE = 4;
+	public static final int PASSWORD_ACCESS_STATE = 5;
 	public static final int TEST_STATE = 19;
 	
 	private static State currentState = null;

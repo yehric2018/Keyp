@@ -8,12 +8,7 @@ import yehric2018.keyp.gfx.Assets;
 import yehric2018.keyp.gfx.Display;
 import yehric2018.keyp.input.KeyManager;
 import yehric2018.keyp.input.MouseManager;
-import yehric2018.keyp.states.AddSuccessState;
-import yehric2018.keyp.states.MenuState;
-import yehric2018.keyp.states.PasswordEntryState;
-import yehric2018.keyp.states.SiteEntryState;
-import yehric2018.keyp.states.State;
-import yehric2018.keyp.states.TestState;
+import yehric2018.keyp.states.*;
 
 public class Program {
 	
@@ -60,6 +55,9 @@ public class Program {
 	}
 	
 	public void setState(int n) {
+		if (State.getState() != null) {
+			State.getState().getUIManager().reset();
+		}
 		State.setState(states[n]);
 		mouseManager.setUIManager(states[n].getUIManager());
 		keyManager.setUIManager(states[n].getUIManager());
@@ -98,6 +96,8 @@ public class Program {
 		states[1] = new SiteEntryState(this);
 		states[2] = new PasswordEntryState(this);
 		states[3] = new AddSuccessState(this);
+		states[4] = new SiteAccessState(this);
+		states[5] = new PasswordAccessState(this);
 		states[19] = new TestState(this);
 		
 		database = new Database();

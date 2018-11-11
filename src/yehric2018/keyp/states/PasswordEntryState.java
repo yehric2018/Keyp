@@ -26,25 +26,20 @@ public class PasswordEntryState extends State {
 				program.getDatabase().addSite(
 						((UITextField) uiManager.getElements().get(0)).getText());
 				program.getDatabase().saveData();
-				uiManager.reset();
 				program.setState(State.ADD_SUCCESS_STATE);
 			}
 		}));
 		
 		uiManager.addElement(new UIButton(100, 220, 100, 60, Assets.back, new ClickListener() {
-			// Access a password
 			public void onClick() {
-				uiManager.reset();
 				program.setState(State.SITE_ENTRY_STATE);
 			}
 		}));
 		
 		uiManager.addElement(new UIButton(100, 300, 300, 50, Assets.randomPassword, new ClickListener() {
-			// Access a password
 			public void onClick() {
 				program.getDatabase().addSite(PasswordGenerator.generatePass(16));
 				program.getDatabase().saveData();
-				uiManager.reset();
 				program.setState(State.ADD_SUCCESS_STATE);
 			}
 		}));
