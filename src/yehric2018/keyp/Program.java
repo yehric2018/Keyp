@@ -90,6 +90,7 @@ public class Program {
 		display.getFrame().addKeyListener(keyManager);
 		
 		Assets.init();
+		display.getFrame().setIconImage(Assets.logo);
 		
 		states = new State[State.NUM_OF_STATES];
 		states[0] = new MenuState(this);

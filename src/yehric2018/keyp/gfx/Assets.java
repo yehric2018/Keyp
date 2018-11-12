@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class Assets {
 	
+	public static BufferedImage logo;
 	public static BufferedImage logotext;
 	public static BufferedImage sitefield;
 	public static BufferedImage pwordfield;
@@ -13,6 +14,7 @@ public class Assets {
 	public static BufferedImage[] addsite;
 	public static BufferedImage[] login;
 	public static BufferedImage[] settings;
+	public static BufferedImage[] exit;
 	public static BufferedImage[] submit;
 	public static BufferedImage[] back;
 	public static BufferedImage[] randomPassword;
@@ -28,6 +30,7 @@ public class Assets {
 		randomPassword = new BufferedImage[2];
 		view = new BufferedImage[2];
 		unview = new BufferedImage[2];
+		exit = new BufferedImage[2];
 		
 		addsite[0] = ImageLoader.loadImage("/buttons/addsitebutton1.png");
 		addsite[1] = ImageLoader.loadImage("/buttons/addsitebutton2.png");
@@ -45,7 +48,10 @@ public class Assets {
 		view[1] = ImageLoader.loadImage("/buttons/view2.png");
 		unview[0] = ImageLoader.loadImage("/buttons/unview1.png");
 		unview[1] = ImageLoader.loadImage("/buttons/unview2.png");
-				
+		exit[0] = ImageLoader.loadImage("/buttons/exit1.png");
+		exit[1] = ImageLoader.loadImage("/buttons/exit2.png");
+		
+		logo = ImageLoader.loadImage("/concepts/logo.png");
 		logotext = ImageLoader.loadImage("/concepts/logotext.png");
 		sitefield = ImageLoader.loadImage("/prompts/siteentryfield.png");
 		pwordfield = ImageLoader.loadImage("/prompts/pwordentryfield.png");

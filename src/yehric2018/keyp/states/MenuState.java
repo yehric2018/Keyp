@@ -16,6 +16,8 @@ public class MenuState extends State {
 	}
 	
 	public void update(Graphics g) {
+		g.drawImage(Assets.logotext, 20, 20, 400, 100, null);
+		
 		uiManager.update(g);
 	}
 	
@@ -36,6 +38,12 @@ public class MenuState extends State {
 			// Change the settings
 			public void onClick() {
 				System.out.println("Changing settings...");
+			}
+		}));
+		
+		uiManager.addElement(new UIButton(220, 315, 70, 70, Assets.exit, new ClickListener() {
+			public void onClick() {
+				System.exit(0);
 			}
 		}));
 	}

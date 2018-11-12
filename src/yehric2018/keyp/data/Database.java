@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
+import yehric2018.keyp.util.Crypto;
+
 public class Database {
 	private Map<String, Password> passwords;
 	
@@ -22,7 +24,7 @@ public class Database {
 		passwords = new HashMap<String, Password>();
 		savedSites = new HashSet<String>();
 		
-		storage = new File(".\\private\\passwords.txt");
+		storage = new File(".\\private\\passwords0.txt");
 		init();
 		
 		try {
@@ -38,7 +40,8 @@ public class Database {
 	public void saveData() {
 		for (String site : passwords.keySet()) {
 			if (!savedSites.contains(site)) {
-				output.println(site + " " + passwords.get(site).getPlainText());
+				String code = Crypto.encrypt(site + " " + passwords.get(site).getPlainText());
+				output.println(code);
 				savedSites.add(site);
 			}
 		}
@@ -76,6 +79,7 @@ public class Database {
 			
 			while (s.hasNextLine()) {
 				String line = s.nextLine();
+				line = Crypto.decrypt(line);
 				String[] pair = line.split(" ");
 				
 				passwords.put(pair[0], new Password(pair[1]));
