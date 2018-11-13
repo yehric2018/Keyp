@@ -1,5 +1,4 @@
-# MemoPass
-Easily and securely store, create, access, and manage login username and passwords for multiple sites. Developed by Eric Yeh.
+#Keyp
 
 With our growing reliance on the Internet, we are forced to make account after account, whether it be for e-mail, online shopping, applications, or other services. Inevitably, we lose count of the overwhelming number of accounts we sign up for.
 
