@@ -48,4 +48,7 @@ public abstract class UIElement {
 	public void reset() {
 		hovering = false;
 	}
+
+	public void keyPressed(KeyEvent e) {
+	}
 }

@@ -42,6 +42,10 @@ public class UIManager {
 		for (UIElement o : elements)
 			o.keyTyped(e);
 	}
+	public void keyPressed(KeyEvent e) {
+		for (UIElement o : elements)
+			o.keyPressed(e);
+	}
 	
 	public Program getProgram() {
 		return program;
