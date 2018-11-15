@@ -9,9 +9,9 @@ This growing reliance on the creation of Internet accounts that hold our informa
 
 So the solution we are looking for is some way to remember 100 different passwords. Unfortunately, most humans are not capable of that, but maybe a computer can.
 
-MemoPass attempts to solve this problem. MemoPass will allow a user to store a database of their passwords and other login information for all their accounts, which can be easily accessed with a few clicks and button presses. When a password is accessed, rather than be displayed onto the screen, <b>it will instead be copied onto the computer's clipboard, allowing one to simply paste the password into the box without having to take the extra time to type it out.</b>
+Keyp attempts to solve this problem. Keyp will allow a user to store a database of their passwords and other login information for all their accounts, which can be easily accessed with a few clicks and button presses. When a password is accessed, rather than be displayed onto the screen, <b>it will instead be copied onto the computer's clipboard, allowing one to simply paste the password into the box without having to take the extra time to type it out.</b>
 
-Here are some of the basic functions of MemoPass:
+Here are some of the basic functions of Keyp:
 1. Stores a database of login information including usernames, passwords, and security questions, which can be accessed simply by giving the name of the site.
 2. Keep passwords hidden from others looking at your screen by copying them to your clipboard instead. Also has a cleaning functionality that cleans the password from the clipboard so you don't accidentally paste it into plain site.
 3. Generate randomized passwords for sites that are difficult to brute force.
